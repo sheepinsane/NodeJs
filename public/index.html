@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Page Load Example with AJAX</title>
+</head>
+<body>
+  <h1>Hello, World!</h1>
+  <script>
+    const pageLoad = () => {
+      fetch('/Test/List')
+        .then(response => response.json())
+        .then(data => {
+          console.log(data);
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+    };
+    document.addEventListener('DOMContentLoaded', pageLoad);
+  </script>
+</body>
+</html>

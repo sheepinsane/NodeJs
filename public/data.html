@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Vue.js Dynamic Data Example</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div id="app">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Age</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="item in items" :key="item.id">
+            <td>{{ item.name }}</td>
+            <td>{{ item.age }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <button @click="loadData">Load Data</button>
+      <button @click="add">Add data</button>
+    </div>
+
+    <script>
+    new Vue({
+      el: '#app',
+      data: {
+        items: []
+      },
+      methods: {
+        loadData() {
+          // 模擬從伺服器載入資料
+          setTimeout(() => {
+            // 假設從伺服器獲取的資料是一個陣列
+            fetch('/Test/List')
+            .then(response => response.json())
+            .then(data => {
+                data.forEach( item =>{
+                  this.items = item;
+                });
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+            // 更新資料狀態
+          }, 500);
+        },
+        add()
+        {
+          this.items.push({name:'ALEX',age:120});
+        }
+      }
+    });
+  </script>
+  </body>
+</html>
