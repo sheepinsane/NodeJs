@@ -46,7 +46,7 @@
       // Add/remove active class to Section 2 based on scroll position
       $(window).scroll(function() {
         var scrollPos = $(document).scrollTop();
-        var section2Pos = $('#section2').offset().top - 100; // Adjust the offset value if needed
+        var section2Pos = $('#section2').offset().top - 300; // Adjust the offset value if needed
         if (scrollPos >= section2Pos) {
           $('#section1').addClass('active');
           $('#section2').addClass('active');
@@ -60,6 +60,23 @@
         }
       });
     });
+    //Reszie check
+    $(window).on('resize', function() {
+        var hasScroll = $(document).height() > $(window).height();
+        
+        if (hasScroll) {
+            $('#section1').removeClass('active');
+            $('#section2').removeClass('active');
+            $('#section3').removeClass('active');
+            $('#section4').removeClass('active');
+        } else {
+            $('#section1').addClass('active');
+            $('#section2').addClass('active');
+            $('#section3').addClass('active');
+            $('#section4').addClass('active');
+            console.log('No scrolling is possible.');
+        }
+      });
   </script>
 </head>
 <body>
