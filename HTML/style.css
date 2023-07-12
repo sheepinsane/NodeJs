@@ -1,0 +1,48 @@
+*{
+    padding:0%;
+    margin: 0%;
+}
+.div_section{
+    height:400px;
+    margin-top: 80px;
+}
+.div_img{
+    background: url('title.jpg') center/cover no-repeat; /* 背景圖片 */
+    /* 或者可以使用背景顏色 */
+    /* background-color: #f1f1f1; */
+    width: 100%;
+    height:600px;
+}
+img{
+    float: left; 
+    margin: 10px;
+}
+
+a{
+    text-decoration:none;
+    border-block:inherit;
+    color: #fff;
+    margin:10px;
+    font-family:Arial, Helvetica, sans-serif;
+}
+a:hover{
+    color: #00b;
+    transition: 0.5s;
+}
+
+.navbar-custom {
+    background-color: black; /* 设置背景颜色为黑色 */
+  }
+
+  .navbar-custom .navbar-nav .nav-link {
+    color: white; /* 设置字体颜色为白色 */
+  }
+
+  .navbar-custom .navbar-nav .nav-link:hover {
+    color: gray; /* 鼠标悬停时设置字体颜色为灰色 */
+  }
+  .divSection1-roll
+  {
+      transition: opacity 0.5s ease-in-out;
+      opacity: 0.5;
+  }
