@@ -85,6 +85,7 @@
                             <th>本金</th>
                             <th>利息</th>
                             <th>期數</th>
+                            <th>利息</th>
                             <th>本利和</th>
                         </tr>
                     </thead>
@@ -93,6 +94,7 @@
                             <td>{{ item.price }}</td>
                             <td>{{ item.ratio }}</td>
                             <td>{{ item.year }}</td>
+                            <td>{{ item.priceratio }}</td>
                             <td>{{ item.pricetotal }}</td>
                         </tr>
                     </tbody>
@@ -126,27 +128,33 @@
         el: "#app",
         data: {
           items: [],
-          year: 5,
-          price: 10000,
-          ratio: 0.06,
-          result:0,
+          year: 6,
+          price: 85500,
+          ratio: 0.02,
         },
         methods: {
             loadData() {
             // 模擬從伺服器載入資料
             //this.year = 100;
             this.items = [];
+            var total = 0
             for (let i = 1; i <= this.year; i++) {
-                // 在这里执行循环体中的操作
-                this.result = this.result + this.price;
-                this.result = this.result + this.result  * this.ratio;
+                 //在这里执行循环体中的操作
+                if(i == 1)
+                {
+                    total = this.price;
+                } 
+                    
+    
                 const item = { 
-                                price: this.price * i, 
+                                price: total, 
                                 ratio: this.ratio,
                                 year:i ,
-                                pricetotal:this.result
+                                priceratio:(total * this.ratio),
+                                pricetotal:(total * ( 1 + this.ratio))
                             };
                 this.items.push(item);
+                total = (parseFloat(this.price) + parseFloat(total  * (1+this.ratio)));
               }
             }
         },
