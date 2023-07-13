@@ -3,7 +3,7 @@
     margin: 0%;
 }
 .div_section{
-    height:400px;
+    /* height:400px; */
     margin-top: 80px;
 }
 .div_img{
@@ -25,10 +25,6 @@ a{
     margin:10px;
     font-family:Arial, Helvetica, sans-serif;
 }
-a:hover{
-    color: #00b;
-    transition: 0.5s;
-}
 
 .navbar-custom {
     background-color: black; /* 设置背景颜色为黑色 */
@@ -44,5 +40,5 @@ a:hover{
   .divSection1-roll
   {
       transition: opacity 0.5s ease-in-out;
-      opacity: 0.5;
+      opacity: 0.4;
   }

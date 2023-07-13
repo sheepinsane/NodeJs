@@ -22,11 +22,16 @@ $(document).ready(function() {
   {
       var pos1 = $(document).scrollTop();
       var pos2 = obj.offset().top - 200; // Adjust the offset value if needed
+      if(pos1 == 0)
+      {
+        obj.removeClass(classname);
+        return;
+      }
       if(pos1 > pos2)
       {
           obj.addClass(classname);
           return;
-      }
+      } 
       obj.removeClass(classname);
       return;
   }
